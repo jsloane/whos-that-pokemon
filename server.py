@@ -295,6 +295,9 @@ async def stats(*args):
 	sortScore = sorted(score.items(), key=lambda x:x[1])
 	sortScore.reverse()
 	for player in sortScore:
+		if (len(scoreString) > 1800):
+			await my_bot.say(scoreString)
+			scoreString = ""
 		scoreString += "\n"+get_rank(player[0])+"  -  "+str(player[1])
 	await my_bot.say(scoreString)
 	return
