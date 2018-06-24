@@ -61,6 +61,7 @@ def get_rank(name):
 @my_bot.event
 async def on_ready():
 	print("Client logged in")
+	await my_bot.send_message(my_bot.get_channel("<channel-id>"), "Enter a command to start a game\n**!startAllGens** - Play Who's That Pokemon for Gens 1 - 7\n**!startGen#** - Play Who's That Pokemon for gen # (replace # with 1 - 7)\n**!timeAttack** - Time attack mode\n!stats - See player stats")
 
 @my_bot.command()
 async def startGen1(*args):
